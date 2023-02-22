@@ -16,3 +16,9 @@ You will also see any lint errors in the console.
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
+
+## Using the widget 
+
+`<iframe 
+src="https://dappland-widgets.vercel.app/?dappname=YOUR_DAPP_NAME" height="100%" width="100%" title="Dappland Widget"></iframe>`
