@@ -9,9 +9,14 @@
   border-radius: 0.5rem;
   max-width: 260px;
   margin: 0 auto;
+  cursor: pointer;
   &--dark {
     background-color: $black;
     color: $white;
+  }
+  &__link {
+    text-decoration: none;
+    color: inherit;
   }
   &__logo {
     &--desktop {
