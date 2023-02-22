@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useMobile } from '../../hooks/useMedia';
 import useRatingData from '../../hooks/useRatingData';
 import useTheme from '../../hooks/useTheme';
 import { Logo } from '../Logo/Logo';
@@ -10,7 +9,6 @@ const RatingWidget = () => {
   const [dappName, setDappName] = useState(''); 
   const { ratingData, isLoading } = useRatingData(dappName);
   const theme = useTheme();
-  const isMobile = useMobile();
   const url = `https://www.dappland.com/${dappName}`;
 
   const totalStars = 5;
@@ -32,7 +30,7 @@ const RatingWidget = () => {
 
   return (
       <div className={`dappland-review dappland-review--${theme.mode}`} onClick={handleClick}>
-        <a className='dappland-review__link' href={url}><div className="dappland-review__logo">{isMobile ? <Logo /> : <h2 className='dappland-review__title'>{ratingData?.dappKey}</h2>}</div></a>
+        <a className='dappland-review__link' href={url}><div className="dappland-review__logo"><h2 className='dappland-review__title'>{ratingData?.dappKey}</h2></div></a>
         <div className='dappland-review__stars'> 
           {[...new Array(totalStars)].map((arr, index) => {
           return activeStars && index < activeStars ? <ActiveStar key={index} /> : <OutlineStar key={index} />;
@@ -42,7 +40,7 @@ const RatingWidget = () => {
           <span className="dappland-review__rating">{activeStars}</span>
           <span className="dappland-review__total-rating"> / {totalStars}</span>
         </div>
-        {!isMobile && <div className="dappland-review__logo--desktop"><Logo /></div>}
+        <div className="dappland-review__logo--desktop"><Logo /></div>
       </div>
   );
 };
