@@ -21,4 +21,4 @@ It correctly bundles React in production mode and optimizes the build for the be
 ## Using the widget 
 
 `<iframe 
-src="https://dappland-widgets.vercel.app/?dappname=YOUR_DAPP_NAME" height="100%" width="100%" frameBorder="0" title="Dappland Review Widget"></iframe>`
+src="https://dappland-widgets.vercel.app/?dappname=YOUR_DAPP_NAME" width="260" height="176" frameBorder="0" title="Dappland Review Widget"></iframe>`
