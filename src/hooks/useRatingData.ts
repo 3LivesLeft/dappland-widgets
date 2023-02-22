@@ -7,11 +7,9 @@ type RatingWidgetData = {
   ratings: number;
 }
 
-const useRatingData = () => {
+const useRatingData = (dappName:string) => {
     const [ratingData, setRatingData] = useState<RatingWidgetData>();
     const [isLoading, setLoading] = useState(true);
-    // const dappName = 'briq';
-    const dappName = 'jediswap';
   
   useEffect(() => {
      const fetchData = async () => {
@@ -25,8 +23,10 @@ const useRatingData = () => {
         setLoading(false);
     } 
     };
+    if (dappName) { 
       fetchData();
-  }, []);
+    }
+  }, [dappName]);
   return { ratingData, isLoading }
 };
 
