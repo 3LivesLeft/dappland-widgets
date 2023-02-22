@@ -24,7 +24,7 @@ const RatingWidget = () => {
     const params = new URLSearchParams(window.location.search);
     const name = params.get("dappname");
     if (name) {
-      setDappName(name);
+      setDappName(name.toLowerCase());
     }
   }, []);
 
