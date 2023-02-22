@@ -1,4 +1,3 @@
-import './base.scss';
 import RatingWidget from './components/RatingWidget/RatingWidget';
 
 function App() {
