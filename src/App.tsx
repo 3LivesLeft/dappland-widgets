@@ -1,11 +1,10 @@
+import { ReactElement } from 'react';
 import RatingWidget from './components/RatingWidget/RatingWidget';
 
-function App() {
+export function App(): ReactElement {
   return (
     <div className="App">
-     <RatingWidget />
+      <RatingWidget />
     </div>
   );
 }
-
-export default App;
