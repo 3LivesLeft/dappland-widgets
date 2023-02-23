@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import useRatingData from '../../hooks/useRatingData';
 import useTheme from '../../hooks/useTheme';
 import { Logo } from '../Logo/Logo';
 import './ratingWidget.scss';
 import { ActiveStar, OutlineStar } from './Stars/Stars';
 
-const RatingWidget = () => {
+const RatingWidget = (): ReactElement => {
   const [dappName, setDappName] = useState('');
-  const { ratingData, isLoading } = useRatingData(dappName);
+  const { ratingData } = useRatingData(dappName);
   const theme = useTheme();
   const url = `https://www.dappland.com/${dappName}`;
 
   const totalStars = 5;
-  const activeStars = ratingData?.averageRating;
+  const activeStars = ratingData ? ratingData.averageRating : 0;
 
-  function handleClick() {
+  function handleClick(): void {
     if (window.top) {
       window.top.location.href = url;
     }
@@ -36,9 +36,9 @@ const RatingWidget = () => {
         </div>
       </a>
       <div className="dappland-review__stars">
-        {[...new Array(totalStars)].map((arr, index) => {
-          return activeStars && index < activeStars ? <ActiveStar key={index} /> : <OutlineStar key={index} />;
-        })}
+        {[...new Array({ totalStars })].map((arr, index) =>
+          activeStars && index < activeStars ? <ActiveStar key={index} /> : <OutlineStar key={index} />
+        )}
       </div>
       <div className="dappland-review__rating-container">
         <span className="dappland-review__rating">{activeStars}</span>

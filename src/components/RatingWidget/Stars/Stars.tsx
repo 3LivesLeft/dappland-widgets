@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 
 export const ActiveStar = (): ReactElement => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" fill="none">

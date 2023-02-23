@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 
-type RatingWidgetData = {
+interface RatingWidgetData {
   averageRating: number;
   dappKey: string;
   voteCount: number;
   ratings: number;
-};
+}
 
 type ResponseData = {
   isLoading: boolean;
-  ratingData: RatingWidgetData | undefined;
+  ratingData?: RatingWidgetData;
 };
 
 const useRatingData = (dappName: string): ResponseData => {
@@ -17,19 +17,20 @@ const useRatingData = (dappName: string): ResponseData => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchReviews = async (): Promise<any> => {
       try {
         const response = await fetch(`https://cloud-dev.argent-api.com/v1/tokens/dapps/ratings/${dappName}`);
-        const data = await response.json();
+        const data = (await response.json()) as RatingWidgetData;
         setRatingData(data);
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.error(error);
       } finally {
         setLoading(false);
       }
     };
     if (dappName) {
-      fetchData();
+      void fetchReviews();
     }
   }, [dappName]);
   return { ratingData, isLoading };
