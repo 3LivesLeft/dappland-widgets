@@ -43,8 +43,11 @@
     "react/jsx-props-no-spreading": ["error", { "custom": "ignore" }],
     "@typescript-eslint/explicit-function-return-type": ["warn", { "allowExpressions": true }],
     "arrow-body-style": ["warn", "as-needed"],
+    "@typescript-eslint/no-explicit-any": ["off"],
     "no-underscore-dangle": ["error", { "allow": ["_source", "_id", "__typename", "__session"] }],
     "indent": "off",
-    "@typescript-eslint/indent": 0
+    "@typescript-eslint/indent": 0,
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }

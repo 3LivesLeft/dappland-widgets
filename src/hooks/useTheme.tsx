@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-type UseThemeProps = { mode: 'light' | 'dark' | undefined };
+type UseThemeProps = { mode: 'light' | 'dark' };
 
 const useTheme = (): UseThemeProps => {
-  const [mode, setMode] = useState<'light' | 'dark' | undefined>(
+  const [mode, setMode] = useState<'light' | 'dark'>(
     window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   );
 
