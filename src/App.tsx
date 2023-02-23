@@ -1,3 +1,4 @@
+import React from 'react';
 import RatingWidget from './components/RatingWidget/RatingWidget';
 
 export function App() {
