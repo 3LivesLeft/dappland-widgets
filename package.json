@@ -47,7 +47,7 @@
     "pretty": "prettier --write './**/*.{ts,scss,css,json,md,mdx}'"
   },
   "lint-staged": {
-    "**/*.{js,ts,scss,css}": [
+    "**/*.{js,jsx,ts,tsx}": [
       "yarn pretty",
       "yarn lint"
     ]

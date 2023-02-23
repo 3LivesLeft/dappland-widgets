@@ -17,13 +17,13 @@ const useRatingData = (dappName: string): ResponseData => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const fetchReviews = async (): Promise<any> => {
       try {
         const response = await fetch(`https://cloud-dev.argent-api.com/v1/tokens/dapps/ratings/${dappName}`);
         const data = (await response.json()) as RatingWidgetData;
         setRatingData(data);
       } catch (error) {
-        // eslint-disable-next-line no-console
         console.error(error);
       } finally {
         setLoading(false);
