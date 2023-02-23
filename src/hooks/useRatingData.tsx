@@ -7,7 +7,12 @@ type RatingWidgetData = {
   ratings: number;
 };
 
-const useRatingData = (dappName: string) => {
+type ResponseData = {
+  isLoading: boolean;
+  ratingData: RatingWidgetData | undefined;
+};
+
+const useRatingData = (dappName: string): ResponseData => {
   const [ratingData, setRatingData] = useState<RatingWidgetData>();
   const [isLoading, setLoading] = useState(true);
 

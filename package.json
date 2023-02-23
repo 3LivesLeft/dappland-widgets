@@ -18,10 +18,17 @@
     "@parcel/transformer-svg-react": "^2.8.3",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
     "eslint": "^8.34.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
     "parcel": "^2.8.3",
@@ -36,20 +43,13 @@
     "deploy": "vercel --prod",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
-    "lint": "tsc --noEmit --skipLibCheck && eslint --max-warnings 0",
+    "lint": "tsc --noEmit --skipLibCheck && eslint \"./src/**/*.{js,jsx,ts,tsx}\" --max-warnings 0",
     "pretty": "prettier --write './**/*.{ts,scss,css,json,md,mdx}'"
   },
   "lint-staged": {
     "**/*.{js,ts,scss,css}": [
       "yarn pretty",
       "yarn lint"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "eslint-config-airbnb",
-      "eslint-config-airbnb-typescript",
-      "eslint-config-prettier"
     ]
   },
   "browserslist": {
