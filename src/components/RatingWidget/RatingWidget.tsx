@@ -1,3 +1,4 @@
+import React from 'react';
 import { ReactElement, useEffect, useState } from 'react';
 import useRatingData from '../../hooks/useRatingData';
 import useTheme from '../../hooks/useTheme';
@@ -36,7 +37,7 @@ const RatingWidget = (): ReactElement => {
         </div>
       </a>
       <div className="dappland-review__stars">
-        {[...new Array({ totalStars })].map((arr, index) =>
+        {Array.from({ length: totalStars }).map((arr, index) =>
           activeStars && index < activeStars ? <ActiveStar key={index} /> : <OutlineStar key={index} />
         )}
       </div>
