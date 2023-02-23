@@ -1,11 +1,9 @@
 import RatingWidget from './components/RatingWidget/RatingWidget';
 
-function App() {
+export function App() {
   return (
     <div className="App">
-     <RatingWidget />
+      <RatingWidget />
     </div>
   );
 }
-
-export default App;

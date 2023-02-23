@@ -8,7 +8,7 @@ export function useMobile(mobileWidth = '768px', boolean = true): boolean {
     setMobile(!mediaQuery.matches);
     const handler = (e: MediaQueryListEvent): void => setMobile(!e.matches);
     mediaQuery.addEventListener('change', handler);
-    
+
     return () => {
       mediaQuery.removeEventListener('change', handler);
     };
