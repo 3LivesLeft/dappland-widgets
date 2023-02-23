@@ -35,18 +35,10 @@
   },
   "scripts": {
     "start": "parcel",
-    "build": "parcel build",
+    "build": "parcel build src/index.html",
     "deploy": "vercel --prod",
-    "prepare": "npx husky install",
-    "pre-commit": "lint-staged",
     "lint": "tsc --noEmit --skipLibCheck && eslint \"./src/**/*.{js,jsx,ts,tsx}\" --max-warnings 0",
     "pretty": "prettier --write './**/*.{ts,scss,css,json,md,mdx}'"
-  },
-  "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
-      "yarn pretty",
-      "yarn lint"
-    ]
   },
   "browserslist": {
     "production": [
