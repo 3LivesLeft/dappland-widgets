@@ -15,7 +15,7 @@ const RatingWidget = (): ReactElement => {
   const activeStars = ratingData ? ratingData.averageRating : 0;
   const url = `https://www.dappland.com/${dappName}`;
 
-  function handleClick() {
+  function handleClick(): void {
     if (window.top) {
       window.top.location.href = url;
     }
@@ -41,7 +41,7 @@ const RatingWidget = (): ReactElement => {
             </a>
           </div>
           <div className="dappland-review__stars">
-            {Array.from({ length: totalStars }).map((arr, index) =>
+            {Array.from({ length: totalStars }).map((_, index) =>
               activeStars && index < activeStars ? <ActiveStar key={index} /> : <OutlineStar key={index} />
             )}
           </div>
